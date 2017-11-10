@@ -1,0 +1,7 @@
+body {
+    display: flex;
+    justify-content: center;
+    background-image: url("background-wood.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}

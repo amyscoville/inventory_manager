@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="InventoryManager">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="features/signUp/signUpStyles.css">
+    <link rel="stylesheet" href="features/products/productStyles.css">
+    <link rel="stylesheet" href="node_modules/sweetalert/lib/sweet-alert.css">
+    <link rel="stylesheet" href="features/login/loginStyles.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <title>Inventory Manager</title>
+</head>
+<body>
+    <div class="container">
+        
+        <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+        <div ui-view></div>
+        
+    </div>
+    
+    <!-- ANGULAR -->
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+     <!-- 3rd PARTY DEPS -->
+     <script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+     <script src="node_modules/ngstorage/ngStorage.js"></script>
+     <script src="node_modules/sweetalert/lib/sweet-alert.js"></script>
+     <script src="node_modules/angular-sweetalert/SweetAlert.js"></script>
+    <!-- General -->
+    <script type="text/javascript" src="app.js"></script>
+    <!-- Controllers -->
+    <script type="text/javascript" src="features/signUp/signUpController.js"></script>
+    <script src="features/products/productsController.js"></script>
+    <script src="features/login/loginController.js"></script>
+    <!-- Services -->
+    <script src="shared/services/authentication.js"></script>
+    <script src="shared/services/products.js"></script>
+    
+</body>
+</html>

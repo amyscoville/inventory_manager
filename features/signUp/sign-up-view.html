@@ -1,0 +1,35 @@
+<div class="form-box">
+    <div id="page-title">
+        <p>Letters &amp; Laurels</p>
+    </div>
+    <div id="registration">
+        <div id="form-title">
+            <p>register</p>
+        </div>
+        <div id="sign-up-form">
+            <label for="fName">first name:</label>
+            <br><input id="fName" ng-model="signup.registration.fName"><br>
+
+            <label for="lName">last name:</label>
+            <br><input id="lName" ng-model="signup.registration.lName"><br>
+
+            <label for="email">e-mail address:</label>
+            <br><input type="email" id="email" name="emailAddress" ng-model="signup.registration.email"><br>
+            <span ng-show="signup.badEmail" id="bad-email">Invalid email address</span>
+            
+            <label for="password">password:</label>
+            <br><input type="password" id="password" name="password" ng-model="signup.registration.password"><br>
+            
+            <label for="confirm-password">confirm password:</label>
+            <br><input type="password" id="confirmPassword" name="confirmPassword" ng-model="signup.registration.confirmPassword"><br>
+            <span ng-show="signup.mismatchedPassword" id="mismatched-password">Passwords do not match</span>
+            <span ng-show="signup.empty" id="empty-field">All fields are required</span>
+            <button id="submit" ng-click="signup.clickSubmit(signup.registration)">submit</button>
+        </div>
+        <div id="question">
+            <p>Already registered? <span id="login" ui-sref="login">Login</span></p>
+        </div>
+    </div>
+</div>
+
+<!-- http://odetocode.com/blogs/scott/archive/2014/10/13/confirm-password-validation-in-angularjs.aspx -->
