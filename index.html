@@ -12,7 +12,11 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
     <title>Inventory Manager</title>
 </head>
-<body>
+<body ng-controller="parentController as parent">
+    <div class="topnav" id="myTopnav" ng-hide="$state.includes('login')">
+        <a ng-hide="parent.signedIn()" ui-sref="login">Login</a>
+        <a ng-show="parent.signedIn()" ng-click="parent.clickLogout()">Logout</a>
+    </div>
     <div class="container">
         
         <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
@@ -30,12 +34,13 @@
     <!-- General -->
     <script type="text/javascript" src="app.js"></script>
     <!-- Controllers -->
-    <script type="text/javascript" src="features/signUp/signUpController.js"></script>
+    <script src="parentController.js"></script>
+    <script src="features/signUp/signUpController.js"></script>
     <script src="features/products/productsController.js"></script>
     <script src="features/login/loginController.js"></script>
     <!-- Services -->
     <script src="shared/services/authentication.js"></script>
-    <script src="shared/services/products.js"></script>
+    <script src="shared/services/product.js"></script>
     
 </body>
 </html>

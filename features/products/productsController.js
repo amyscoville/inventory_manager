@@ -6,28 +6,24 @@
     function productsCtrl(Product, products, Auth) {
         //local variable
         var vm = this;
-
+        vm.productsArr;
+        
+        displayProducts();
         //bound methods
-        vm.getProductsList = getProductsList;
-        vm.clickLogout = clickLogout;
+        
+        vm.displayProducts = displayProducts;
         
         //bound properties
-        
 
         //bound method implementations
-        function getProductsList() {
+        function displayProducts() {
             Product.list()
                 .then(function(response){
-                    console.log(response);
-                    return response.data;
-                }, function(response){
-                    console.error(response);
-                    return response.data;
-                });
-        }
+                    vm.productsArr = response;
+                    return response;
+            });     
 
-        function clickLogout() {
-            Auth.logout();
+            //POSSIBLY USE NG-REPEAT TO DISPLAY PRODUCTS
         }
     }
 })();

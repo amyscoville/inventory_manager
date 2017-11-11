@@ -8,7 +8,8 @@
         var service = {
             signup: signup,
             login: login,
-            logout: logout
+            logout: logout,
+            isLoggedInUser: isLoggedInUser
         };
 
         init();

@@ -1,2 +1,7 @@
-<button ng-click="products.clickLogout()">Logout</button>
-<div>products go here</div>
+<div id="product-display">
+    <div ng-repeat="product in products.productsArr">
+        <img src="{{product.imgThumbnail}}" alt="{{product.description}}">
+        <p>{{product.name}}</p>
+        <p>${{product.price}}.00</p>
+    </div> 
+</div>

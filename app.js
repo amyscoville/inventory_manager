@@ -10,11 +10,13 @@
                     url: '/sign-up',
                     templateUrl: 'features/signUp/sign-up-view.html',
                     controller: 'signUpController as signup',
-                    // resolve: {
-                    //     listItem: function(Item) {
-                    //         return Item.list();
-                    //     }
-                    // }
+                    resolve: {
+                        auth: function(Auth, $state){
+                            if(Auth.user){
+                                $state.transitionTo('products');
+                            }
+                        }
+                    }
                 })
 
                 .state('login', {
@@ -45,9 +47,11 @@
 
             $urlRouterProvider.otherwise('/login');
     }])
-    .run(function($rootScope){
+    .run(function($rootScope, $state){
+        $rootScope.$state = $state;
         $rootScope.$on('$stateChangeError', 
         function(event, toState, toParams, fromState, fromParams, error){ console.log(error); });
     })
     .constant('ServerUrl', 'http://wta-inventorybackend.herokuapp.com/api/v1');
 })();
+
