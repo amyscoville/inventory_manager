@@ -1,7 +1,9 @@
 <div id="product-display">
     <div ng-repeat="product in products.productsArr">
-        <img src="{{product.imgThumbnail}}" alt="{{product.description}}">
-        <p>{{product.name}}</p>
-        <p>${{product.price}}.00</p>
+        <div class="product-card">
+            <img src="https://static.pexels.com/photos/60597/dahlia-red-blossom-bloom-60597.jpeg" alt="{{product.description}}">
+            <p>{{product.name}}</p>
+            <p>${{product.price}}.00</p>
+        </div>
     </div> 
 </div>

@@ -21,9 +21,7 @@
                 .then(function(response){
                     vm.productsArr = response;
                     return response;
-            });     
-
-            //POSSIBLY USE NG-REPEAT TO DISPLAY PRODUCTS
+            });
         }
     }
 })();

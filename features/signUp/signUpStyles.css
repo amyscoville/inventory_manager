@@ -13,6 +13,11 @@
     color: red;
 }
 
+#form-box {
+    display: flex;
+    justify-content: center;
+}
+
 #registration {
     width: 350px;
     height: 500px;
