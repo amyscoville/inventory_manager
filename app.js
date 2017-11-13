@@ -35,7 +35,7 @@
                 .state('products', {
                     url: '/products',
                     templateUrl: 'features/products/products-view.html',
-                    controller: 'productsController as products',
+                    controller: 'productsController as productsCtrl',
                     resolve: {
                         products: function(Product) {
                             return Product.list().then(function(response){
@@ -43,6 +43,15 @@
                             });
                         }
                     }
+                })
+                
+                .state('productDetails', {
+                    ur: '/productdetails',
+                    templateUrl: 'features/products/product-details-view.html',
+                    controller: 'productDetailsController as productDetails'
+                    // resolve: {
+
+                    // }
                 });
 
             $urlRouterProvider.otherwise('/products');

@@ -1,21 +1,23 @@
-<div id="login-page-title" press-enter="login.clickEnter(login.user)">
-    <p>Letters &amp; Laurels</p>
-</div>
-<div id="login">
-    <div id="login-form-title">
-        <p>login</p>
+<div press-enter="login.clickEnter(login.user)">
+    <div id="login-page-title">
+        <p>Letters &amp; Laurels</p>
     </div>
-    <div id="login-form">
-            <label for="email">e-mail address:</label>
-            <br><input type="email" id="login-email" name="emailAddress" ng-model="login.user.email"><br>
-            
-            <label for="password">password:</label>
-            <br><input type="password" id="login-password" name="password" ng-model="login.user.password"><br>
-            
-            <button id="login-enter" ng-click="login.clickEnter(login.user)">enter</button>
-            <span ng-show="login.emptyInput">All fields required</span>
-    </div>
-    <div id="login-question">
-        <p>Don't have an account? <span id="sign-up-link" ui-sref="sign-up">Sign up.</span></p>
+    <div id="login">
+        <div id="login-form-title">
+            <p>login</p>
+        </div>
+        <div id="login-form">
+                <label for="email">e-mail address:</label>
+                <br><input type="email" id="login-email" name="emailAddress" ng-model="login.user.email"><br>
+                
+                <label for="password">password:</label>
+                <br><input type="password" id="login-password" name="password" ng-model="login.user.password"><br>
+                
+                <button id="login-enter" ng-click="login.clickEnter(login.user)">enter</button>
+                <span ng-show="login.emptyInput">All fields required</span>
+        </div>
+        <div id="login-question">
+            <p>Don't have an account? <span id="sign-up-link" ui-sref="sign-up">Sign up.</span></p>
+        </div>
     </div>
 </div>
