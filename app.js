@@ -45,7 +45,7 @@
                     }
                 });
 
-            $urlRouterProvider.otherwise('/login');
+            $urlRouterProvider.otherwise('/products');
     }])
     .run(function($rootScope, $state){
         $rootScope.$state = $state;
