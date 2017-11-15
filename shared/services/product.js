@@ -6,20 +6,18 @@
     function product($http, ServerUrl) {
 
         var service = {
-            list: list
+            list: list,
+            grab: grab
         };
 
         return service;
 
         function list(){
             return $http.get(ServerUrl + '/product')
-                .then(function(response){
-                    console.log(response.data);
-                    return response.data;
-                }, function(response){
-                    console.error(response);
-                    return response;
-                });
+        }
+
+        function grab(id) {
+            return $http.get(ServerUrl + '/product/' + id);
         }
     }
 })();

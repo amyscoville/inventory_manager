@@ -20,9 +20,11 @@
         function displayProducts() {
             Product.list()
                 .then(function(response){
-                    vm.productsArr = response;
+                    vm.productsArr = response.data;
                     return response;
-            });
+                }, function(response){
+                    console.error(response.data);
+                });
         }
 
         function goToDetails() {

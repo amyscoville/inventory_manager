@@ -40,18 +40,26 @@
                         products: function(Product) {
                             return Product.list().then(function(response){
                                 return response.data;
+                            }, function(response) {
+                                console.error(response.data);
                             });
                         }
                     }
                 })
                 
                 .state('productDetails', {
-                    ur: '/productdetails',
+                    url: '/productdetails/:id',
                     templateUrl: 'features/products/product-details-view.html',
-                    controller: 'productDetailsController as productDetails'
-                    // resolve: {
-
-                    // }
+                    controller: 'productDetailsController as productDetails',
+                    resolve: {
+                        product: function(Product, $stateParams) {
+                            return Product.grab($stateParams.id).then(function(response){
+                                return response.data[0];
+                            }, function(response) {
+                                console.error(response.data);
+                            });
+                        }
+                    }
                 });
 
             $urlRouterProvider.otherwise('/products');

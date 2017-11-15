@@ -1,0 +1,9 @@
+#prod-detail-window {
+    display: inline;
+    margin: auto;
+}
+
+#prod-detail-image {
+    width: 60%;
+    margin: 20px;
+}

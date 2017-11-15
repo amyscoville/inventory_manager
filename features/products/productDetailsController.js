@@ -3,7 +3,7 @@
     .module('InventoryManager')
     .controller('productDetailsController', productDetailsCtrl);
 
-    function productDetailsCtrl() {
+    function productDetailsCtrl(product) {
         //local variable
         var vm = this;
         
@@ -12,7 +12,8 @@
         
         
         //bound properties
-
+        vm.product = product;
+        
         //bound method implementations
        
     }
