@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="general/style.css">
     <link rel="stylesheet" href="features/signUp/signUpStyles.css">
     <link rel="stylesheet" href="features/products/productStyles.css">
-    <link rel="stylesheet" href="features/products/productDetailsStyles.css">
+    <link rel="stylesheet" href="features/products/productDetails/productDetailsStyles.css">
     <link rel="stylesheet" href="node_modules/sweetalert/lib/sweet-alert.css">
     <link rel="stylesheet" href="features/login/loginStyles.css">
+    <link rel="stylesheet" href="features/orderHistory/orderHistoryStyles.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
     <title>Inventory Manager</title>
 </head>
@@ -34,13 +35,16 @@
      <script src="node_modules/sweetalert/lib/sweet-alert.js"></script>
      <script src="node_modules/angular-sweetalert/SweetAlert.js"></script>
     <!-- General -->
-    <script type="text/javascript" src="app.js"></script>
+    <script src="general/app.js"></script>
+    <script src="general/interceptors.js"></script>
+    <script src="general/states.js"></script>
     <!-- Controllers -->
-    <script src="parentController.js"></script>
+    <script src="general/parentController.js"></script>
     <script src="features/signUp/signUpController.js"></script>
     <script src="features/products/productsController.js"></script>
-    <script src="features/products/productDetailsController.js"></script>
+    <script src="features/products/productDetails/productDetailsController.js"></script>
     <script src="features/login/loginController.js"></script>
+    <script src="features/orderHistory/orderHistoryController.js"></script>
     <!-- Services -->
     <script src="shared/services/authentication.js"></script>
     <script src="shared/services/product.js"></script>

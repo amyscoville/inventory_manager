@@ -1,5 +1,6 @@
 (function(){
-    angular.module('InventoryManager', ['ui.router', 'ngStorage', 'oitozero.ngSweetAlert'])
+    angular
+    .module('InventoryManager')
     .config([
         '$stateProvider',
         '$urlRouterProvider',    
@@ -49,7 +50,7 @@
                 
                 .state('productDetails', {
                     url: '/productdetails/:id',
-                    templateUrl: 'features/products/product-details-view.html',
+                    templateUrl: 'features/products/productDetails/product-details-view.html',
                     controller: 'productDetailsController as productDetails',
                     resolve: {
                         product: function(Product, $stateParams) {
@@ -60,15 +61,23 @@
                             });
                         }
                     }
+                })
+                
+                .state('orderHistory', {
+                    url: '/order-history',
+                    templateUrl: 'features/orderHistory/order-history-view.html',
+                    controller: 'orderHistoryController as orderHistoryCtrl',
+                    resolve: {
+                        // product: function(Product, $stateParams) {
+                        //     return Product.grab($stateParams.id).then(function(response){
+                        //         return response.data[0];
+                        //     }, function(response) {
+                        //         console.error(response.data);
+                        //     });
+                        // }
+                    }
                 });
 
             $urlRouterProvider.otherwise('/products');
     }])
-    .run(function($rootScope, $state){
-        $rootScope.$state = $state;
-        $rootScope.$on('$stateChangeError', 
-        function(event, toState, toParams, fromState, fromParams, error){ console.log(error); });
-    })
-    .constant('ServerUrl', 'http://wta-inventorybackend.herokuapp.com/api/v1');
 })();
-
