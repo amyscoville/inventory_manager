@@ -81,9 +81,13 @@
                 .state('shoppingCart', {
                     url: '/shopping-cart',
                     templateUrl: 'features/shoppingCart/shopping-cart-view.html',
-                    controller: 'shoppingCartController as shoppingCartCtrl',
+                    controller: 'shoppingCartController as sc',
                     resolve: {
-                        
+                        // auth: function(Auth, $state){
+                        //     if(Auth.user){
+                        //         $state.transitionTo('login');
+                        //     }
+                        // }
                     }
                 });
 

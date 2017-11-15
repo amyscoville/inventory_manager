@@ -1,0 +1,20 @@
+<div>Shopping Cart</div>
+<div ng-show="sc.itemsInCart === 0">Your cart is empty</div>
+<div ng-hide="sc.itemsInCart === 0">You have {{sc.itemsInCart}} items in your cart.      <button ng-click="sc.emptyCart()">Empty Cart</button></div>
+<table ng-hide="sc.itemsInCart === 0">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in sc.cartItems">
+            <td>{{item.name}}</td>
+            <td>{{item.price | currency}}</td>
+            <td>{{item.quantity}}</td>
+        </tr>
+    </tbody>
+</table> 
+<button ng-hide="sc.itemsInCart === 0">Place Order</button>

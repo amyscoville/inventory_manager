@@ -3,7 +3,7 @@
     .module('InventoryManager')
     .controller('productDetailsController', productDetailsCtrl);
 
-    function productDetailsCtrl(product, Cart) {
+    function productDetailsCtrl(product, Cart, Auth, SweetAlert, $state) {
         //local variable
         var vm = this;
         

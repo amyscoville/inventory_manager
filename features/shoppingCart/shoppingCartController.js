@@ -8,9 +8,18 @@
         var vm = this;
 
         //bound variables
-        vm.cart = Cart.buildCart();
+        vm.cartItems = Cart.buildCart();
+        vm.itemsInCart = Cart.itemsInCart;
 
+        //bound methods
+        vm.emptyCart = emptyCart;
 
-
+        //bound method implementations
+        function emptyCart() {
+            Cart.itemsInCart = 0;
+            vm.itemsInCart = Cart.itemsInCart;
+            Cart.inCart = [];
+            vm.cartItems = Cart.buildCart();
+        }
     }
 })();

@@ -20,7 +20,8 @@
     <div class="topnav" id="myTopnav">
         <a ng-hide="parent.signedIn() || $state.includes('login')" ui-sref="login">Login</a>
         <a ng-show="parent.signedIn()" ng-click="parent.clickLogout()">Logout</a>
-        <a ng-hide="$state.includes('orderHistory') || $state.includes('login')" ui-sref="orderHistory">Order History</a>
+        <a ng-hide="$state.includes('orderHistory') || !parent.signedIn()" ui-sref="orderHistory">Order History</a>
+        <a ng-show="parent.signedIn() && !$state.includes('shoppingCart')" ui-sref="shoppingCart">Cart</a>
         <a ng-hide="$state.includes('products')" ui-sref="products">Products</a>
     </div>
     <div class="container">
