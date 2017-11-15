@@ -1,0 +1,18 @@
+<div>Order History</div>
+<tbody>
+    <tr ng-repeat="item in todo.listArr">
+        <td> 
+            <span ng-hide="todo.editMode === item.id"> {{item.title}} </span>  
+            <input type="text" ng-show="todo.editMode === item.id" ng-click="todo.setEdit(item.id)" ng-model="todo.currentItem.title"> 
+        </td>
+        <td> 
+            <span ng-hide="todo.editMode === item.id"> {{item.description}} </span> 
+            <input type="text" ng-show="todo.editMode === item.id" ng-click="todo.setEdit(item.id)" ng-model="todo.currentItem.description"> 
+        </td>
+        <td><button ng-click="todo.remove(item.id)">Delete</button></td>
+        <td> 
+            <button ng-click="todo.setEdit(item.id)" ng-hide="todo.editMode === item.id">Edit</button> 
+            <button ng-click="todo.saveEdit(item.id)" ng-show="todo.editMode === item.id">Save</button>
+        </td>
+    </tr>
+</tbody>

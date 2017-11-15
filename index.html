@@ -16,9 +16,11 @@
     <title>Inventory Manager</title>
 </head>
 <body ng-controller="parentController as parent">
-    <div class="topnav" id="myTopnav" ng-hide="$state.includes('login')">
-        <a ng-hide="parent.signedIn()" ui-sref="login">Login</a>
+    <div class="topnav" id="myTopnav">
+        <a ng-hide="parent.signedIn() || $state.includes('login')" ui-sref="login">Login</a>
         <a ng-show="parent.signedIn()" ng-click="parent.clickLogout()">Logout</a>
+        <a ng-hide="$state.includes('orderHistory') || $state.includes('login')" ui-sref="orderHistory">Order History</a>
+        <a ng-hide="$state.includes('products')" ui-sref="products">Products</a>
     </div>
     <div class="container">
         
