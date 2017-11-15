@@ -13,7 +13,8 @@
         <tr ng-repeat="item in sc.cartItems">
             <td>{{item.name}}</td>
             <td>{{item.price | currency}}</td>
-            <td>{{item.quantity}}</td>
+            <td>{{item.quantity}}</td> <!--make quantity editable-->
+            <!-- Make it possible to remove items from cart-->
         </tr>
     </tbody>
 </table> 
