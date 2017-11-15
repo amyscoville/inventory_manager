@@ -17,4 +17,4 @@
         </tr>
     </tbody>
 </table> 
-<button ng-hide="sc.itemsInCart === 0">Place Order</button>
+<button ng-hide="sc.itemsInCart === 0" ng-click="sc.placeOrder(sc.buildSubTransactionsArr())">Place Order</button>
