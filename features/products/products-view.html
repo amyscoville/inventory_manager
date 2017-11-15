@@ -4,6 +4,7 @@
             <img ng-src="{{product.imgThumbnail}}" alt="{{product.description}}" ui-sref="productDetails({id:product.id})">
             <p>{{product.name}}</p>
             <p>${{product.price}}.00</p>
+            <button ng-click="productsCtrl.addToCart(product)">add to cart</button>
         </div>
     </div> 
 </div>

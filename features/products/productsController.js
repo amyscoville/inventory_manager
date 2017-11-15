@@ -3,18 +3,20 @@
     .module('InventoryManager')
     .controller('productsController', productsCtrl);
 
-    function productsCtrl(Product, products, Auth, $state) {
+    function productsCtrl(Product, products, Auth, Cart, $state) {
         //local variable
         var vm = this;
-        vm.productsArr;
         
+        //call methods
         displayProducts();
+        
         //bound methods
         
         vm.displayProducts = displayProducts;
-        vm.goToDetails = goToDetails;
+        vm.addToCart = addToCart;
         
         //bound properties
+        vm.productsArr;
 
         //bound method implementations
         function displayProducts() {
@@ -27,8 +29,9 @@
                 });
         }
 
-        function goToDetails() {
-            $state.go('productDetails');
+        function addToCart(product) {
+            Cart.inCart.push(product);
+            console.log(Cart.inCart);
         }
     }
 })();
