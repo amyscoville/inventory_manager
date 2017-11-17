@@ -20,7 +20,7 @@
             if(isLoggedInUser()) {
                 service.user = getClaimsFromToken();
                 console.log(service.user);
-                if(Date.now() > service.user.exp) {
+                if(Date.now() > service.user.exp * 1000) {
                     logout();
                 }
             }

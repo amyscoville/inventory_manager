@@ -6,40 +6,36 @@
     function cart($http, ServerUrl, Auth) {
 
         var service = {
-            inCart: [],
-            buildCart: buildCart,
-            itemsInCart: 0
+            add: add,
+            remove: remove,
+            emptyCart: emptyCart,
+            cart: {
+            }
         };
 
         return service;
 
         //functions
-        function buildCart() {
-            var cartArr = service.inCart;
-            var alreadyAdded = [];
-            var finalCart = [];
-            for (var i = 0; i < cartArr.length; i++) {
-                currItem = service.inCart[i];
-                if(!alreadyAdded.includes(currItem)) {
-                    alreadyAdded.push(currItem);
-                    currItem.quantity = countInArray(cartArr, currItem);
-                    finalCart.push(currItem);
-                    service.itemsInCart += currItem.quantity;
-                } else {
-                    continue;
-                }
+        
+
+        //object that matches the id of the product to the quantity
+
+        function add(item, amt) {
+            if(service.cart[item.id]){
+                console.log('service.cart[product.id] = ', service.cart[item.id]);
+                service.cart[item.id].qty += amt;
+            } else {
+                service.cart[item.id] = {qty: amt, product: item};
             }
-            return finalCart;
+            console.log('cart: ', service.cart);
         }
 
-        function countInArray(array, elem) {
-            var count = 0;
-            for (var i = 0; i < array.length; i++) {
-                if (array[i] === elem) {
-                    count++;
-                }
-            }
-            return count;
+        function remove() {
+
+        }
+
+        function emptyCart() {
+            service.cart = {};
         }
     }
 })();

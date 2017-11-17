@@ -1,7 +1,7 @@
 <div>Shopping Cart</div>
-<div ng-show="sc.itemsInCart === 0">Your cart is empty</div>
-<div ng-hide="sc.itemsInCart === 0">You have {{sc.itemsInCart}} items in your cart.      <button ng-click="sc.emptyCart()">Empty Cart</button></div>
-<table ng-hide="sc.itemsInCart === 0">
+<div ng-show="sc.items.length === 0">Your cart is empty</div>
+<div ng-hide="sc.items.length === 0">You have {{sc.items.length}} items in your cart.      <button ng-click="sc.emptyCart()">Empty Cart</button></div>
+<table ng-hide="sc.items.length === 0">
     <thead>
         <tr>
             <th>Name</th>
@@ -10,12 +10,12 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="item in sc.cartItems">
-            <td>{{item.name}}</td>
-            <td>{{item.price | currency}}</td>
-            <td>{{item.quantity}}</td> <!--make quantity editable-->
+        <tr ng-repeat="(id, item) in sc.items">
+            <td>{{item.product.name}}</td>
+            <td>{{item.product.price | currency}}</td>
+            <td> <input type="number" ng-model="item.qty"></td> <!--make quantity editable-->
             <!-- Make it possible to remove items from cart-->
         </tr>
     </tbody>
 </table> 
-<button ng-hide="sc.itemsInCart === 0" ng-click="sc.placeOrder(sc.buildSubTransactionsArr())">Place Order</button>
+<button ng-hide="sc.items.length === 0" ng-click="sc.placeOrder(sc.buildSubTransactionsArr())">Place Order</button>
