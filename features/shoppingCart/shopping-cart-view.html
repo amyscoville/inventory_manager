@@ -13,7 +13,8 @@
         <tr ng-repeat="(id, item) in sc.items">
             <td>{{item.product.name}}</td>
             <td>{{item.product.price | currency}}</td>
-            <td> <input type="number" ng-model="item.qty"></td> <!--make quantity editable-->
+            <td> <input type="number" ng-model="item.qty"></td> 
+            <td> <span ng-click="sc.removeItem(item.product.id)">Remove Item</span> </td>
             <!-- Make it possible to remove items from cart-->
         </tr>
     </tbody>

@@ -3,7 +3,7 @@
     .module('InventoryManager')
     .factory('Cart', cart);
 
-    function cart($http, ServerUrl, Auth) {
+    function cart($http, ServerUrl, Auth, $localStorage) {
 
         var service = {
             add: add,
@@ -24,14 +24,17 @@
             } else {
                 service.cart[item.id] = {qty: amt, product: item};
             }
+            $localStorage.cart = service.cart;
         }
 
-        function remove() {
-
+        function remove(id) {
+            delete service.cart[id];
+            $localStorage.cart = service.cart;
         }
 
         function emptyCart() {
             service.cart = {};
+            $localStorage.cart = service.cart;
         }
     }
 })();

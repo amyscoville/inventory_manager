@@ -3,17 +3,18 @@
     .module('InventoryManager')
     .controller('shoppingCartController', shoppingCartCtrl);
 
-    function shoppingCartCtrl(Cart, Transactions, SweetAlert) {
+    function shoppingCartCtrl(Cart, Transactions, SweetAlert, $localStorage) {
         //local variable
         var vm = this;
 
         //bound variables
-        vm.items = Cart.cart;
+        vm.items = $localStorage.cart;
         vm.totalQuantity = countItems(vm.items);
        
         //bound methods
         vm.emptyCart = emptyCart;
         vm.countItems = countItems;
+        vm.removeItem = removeItem;
 
         countItems();
       
@@ -32,6 +33,10 @@
             }
             console.log("total num in cart = ", totalNum);
             return totalNum;
+        }
+
+        function removeItem(id) {
+            Cart.remove(id);
         }
     }
 })();
