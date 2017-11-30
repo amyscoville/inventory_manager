@@ -1,7 +1,7 @@
 <div>Shopping Cart</div>
-<div ng-show="sc.numItems === 0">Your cart is empty</div>
-<div ng-hide="sc.numItems === 0">You have {{sc.numItems}} items in your cart.      <button ng-click="sc.emptyCart()">Empty Cart</button></div>
-<table ng-hide="sc.numItems === 0">
+<div ng-show="sc.totalQuantity === 0">Your cart is empty</div>
+<div ng-hide="sc.totalQuantity === 0"> <button ng-click="sc.emptyCart()">Empty Cart</button> </div>
+<table ng-hide="sc.totalQuantity === 0">
     <thead>
         <tr>
             <th>Name</th>
@@ -18,4 +18,4 @@
         </tr>
     </tbody>
 </table> 
-<button ng-hide="sc.numItems === 0" ng-click="sc.placeOrder(sc.buildSubTransactionsArr())">Place Order</button>
+<button ng-hide="sc.totalQuantity === 0" ng-click="sc.placeOrder(sc.buildSubTransactionsArr())">Place Order</button>

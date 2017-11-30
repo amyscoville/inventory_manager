@@ -16,9 +16,6 @@
         return service;
 
         //functions
-        
-
-        //object that matches the id of the product to the quantity
 
         function add(item, amt) {
             if(service.cart[item.id]){
@@ -27,7 +24,6 @@
             } else {
                 service.cart[item.id] = {qty: amt, product: item};
             }
-            console.log('cart: ', service.cart);
         }
 
         function remove() {

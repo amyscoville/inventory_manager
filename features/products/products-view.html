@@ -4,8 +4,7 @@
             <img ng-src="{{product.imgThumbnail}}" alt="{{product.description}}" ui-sref="productDetails({id:product.id})">
             <p>{{product.name}}</p>
             <p>{{product.price | currency}}</p> 
-            <button ng-show="parent.signedIn()" ng-click="productsCtrl.addToCart(product, 1)">add to cart</button>
-            <p ng-hide="parent.signedIn()">(Please login to add item to cart.)</p>
+            <button ng-click="productsCtrl.addToCart(product, 1)">add to cart</button>
         </div>
     </div> 
 </div>
