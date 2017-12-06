@@ -36,5 +36,9 @@
             service.cart = {};
             $localStorage.cart = service.cart;
         }
+
+        function placeOrder() {
+            
+        }
     }
 })();

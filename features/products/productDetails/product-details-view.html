@@ -3,6 +3,5 @@
     <p id="prod-detail-name">{{productDetails.product.name}}</p>
     <p id="prod-detail-price">Price: {{productDetails.product.price | currency}}</p>
     <p id="prod-detail-description">{{productDetails.product.description}}</p>
-    <button ng-show="Auth.user" ng-click="productDetails.addToCart(productDetails.product, 1)">add to cart</button>
-    <p ng-show="!Auth.user">(Please login to add item to cart.)</p>
+    <button ng-click="productDetails.addToCart(productDetails.product, 1)">add to cart</button>
 </div>
