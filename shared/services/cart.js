@@ -3,14 +3,15 @@
     .module('InventoryManager')
     .factory('Cart', cart);
 
-    function cart($http, ServerUrl, Auth, $localStorage) {
+    function cart($http, ServerUrl, Auth, $localStorage, Transactions, SweetAlert, $state) {
 
         var service = {
             add: add,
             remove: remove,
             emptyCart: emptyCart,
-            cart: {
-            }
+            cart: $localStorage.cart || {},
+            buildSubTransactionsArr: buildSubTransactionsArr,
+            placeOrder: placeOrder
         };
 
         return service;
@@ -38,7 +39,41 @@
         }
 
         function placeOrder() {
-            
+            Transactions.postNewPurchase(service.buildSubTransactionsArr())
+                .then(function(response){
+                    console.log(response.data);
+                    SweetAlert.swal('Thank you for your order!');
+                    service.emptyCart();
+                    $state.go('products');
+                },
+                function(response){
+                    console.error(response.data);
+                });
+        }
+
+        function buildSubTransactionsArr() {
+            var subTransactionsArr = [];
+            console.log(service.cart);
+            for (var item in service.cart) {
+                var transaction = {id: +item, qty: service.cart[item].qty};
+                subTransactionsArr.push(transaction);
+            }
+            return subTransactionsArr;
         }
     }
 })();
+
+// function placeOrder(subTransactions) {
+//               Transactions.postNewPurchase(subTransactions)
+//                     .then(function(response){
+//                         console.log(response.data);
+//                         SweetAlert.swal('Thank you for your order!');
+//                         vm.emptyCart();
+//                     }, 
+//                     function(response){
+//                         console.error(response.data);
+//                     });
+//             }
+    
+
+    

@@ -15,8 +15,7 @@
             <td>{{item.product.price | currency}}</td>
             <td> <input type="number" ng-model="item.qty"></td> 
             <td> <span ng-click="sc.removeItem(item.product.id)">Remove Item</span> </td>
-            <!-- Make it possible to remove items from cart-->
         </tr>
     </tbody>
 </table> 
-<button ng-hide="sc.totalQuantity === 0" ng-click="sc.placeOrder(sc.buildSubTransactionsArr())">Place Order</button>
+<button ng-hide="sc.totalQuantity === 0" ng-click="sc.placeOrder()">Place Order</button>

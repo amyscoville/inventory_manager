@@ -15,12 +15,14 @@
         vm.emptyCart = emptyCart;
         vm.countItems = countItems;
         vm.removeItem = removeItem;
+        vm.placeOrder = placeOrder;
 
         countItems();
       
         //bound method implementations
         function emptyCart() {
             vm.items = {};
+            vm.totalQuantity = 0;
             Cart.emptyCart();
             console.log("Cart.cart = ", Cart.cart);
         }
@@ -37,6 +39,11 @@
 
         function removeItem(id) {
             Cart.remove(id);
+        }
+
+        function placeOrder(){
+            Cart.placeOrder();
+            //if I set items and totalQuantity to zero, then the "Thank You for your order" part of the Cart.placeOrder function doesn't run. 
         }
     }
 })();
