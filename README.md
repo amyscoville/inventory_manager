@@ -28,9 +28,16 @@ Build a front-end CRUD inventory manager application with AngularJS. Include use
 * CSS
 * Heroku API
 
-### Rendering
+## Challenges and Insights
 
-Use the terminal command `live-server` to render this project in the browser.
+As this was my first project in AngularJS, there was a steep learning curve every step of the way. Concepts such as two-way binding, dependency injection, singleton services, and the model-view-controller pattern were new to me and difficult to wrap my head around. The most challenging task for me was dealing with resolves. The syntax was straightforward, but I struggled to know when and why to use them, and accidently wrote conflicting resolves a few times. There were many points during the project when I felt discouraged and ready to give up. It became clear to me that the only way out was through, and that instead of backing off and letting go, leaning into the difficulty and pushing through it was good for me and would result in a deeper understanding of the concepts than I could have gotten through a lecture or tutorial. I'm looking forward to jumping back into this project and seeing it to completion. 
+
+## Future Plans
+
+Add the following features:
+* Order History
+* Transaction Details
+* Admin Dashboard (transaction histories, inventory management)
 
 
 
