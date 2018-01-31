@@ -21,6 +21,7 @@
 #registration {
     width: 350px;
     height: 500px;
+    margin: auto;
     overflow: scroll;
     border: none;
     background-color: white;

@@ -4,6 +4,8 @@
 }
 
 #prod-detail-image {
-    width: 60%;
+    width: 600px !important;
+    height: auto;
     margin: 20px;
 }
+

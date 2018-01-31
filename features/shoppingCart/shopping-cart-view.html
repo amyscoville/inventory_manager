@@ -1,7 +1,6 @@
-<div>Shopping Cart</div>
 <div ng-show="sc.totalQuantity === 0">Your cart is empty</div>
-<div ng-hide="sc.totalQuantity === 0"> <button ng-click="sc.emptyCart()">Empty Cart</button> </div>
-<table ng-hide="sc.totalQuantity === 0">
+<div ng-hide="sc.totalQuantity === 0"> </div>
+<table ng-hide="sc.totalQuantity === 0" class='cart-table'>
     <thead>
         <tr>
             <th>Name</th>
@@ -13,9 +12,9 @@
         <tr ng-repeat="(id, item) in sc.items">
             <td>{{item.product.name}}</td>
             <td>{{item.product.price | currency}}</td>
-            <td> <input type="number" ng-model="item.qty"></td> 
+            <td> <input class="qty" type="number" ng-model="item.qty"></td> 
             <td> <span ng-click="sc.removeItem(item.product.id)">Remove Item</span> </td>
         </tr>
     </tbody>
 </table> 
-<button ng-hide="sc.totalQuantity === 0" ng-click="sc.placeOrder()">Place Order</button>
+<button ng-click="sc.emptyCart()">Empty Cart</button> <button ng-hide="sc.totalQuantity === 0" ng-click="sc.placeOrder()">Place Order</button> 

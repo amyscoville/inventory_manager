@@ -62,18 +62,3 @@
         }
     }
 })();
-
-// function placeOrder(subTransactions) {
-//               Transactions.postNewPurchase(subTransactions)
-//                     .then(function(response){
-//                         console.log(response.data);
-//                         SweetAlert.swal('Thank you for your order!');
-//                         vm.emptyCart();
-//                     }, 
-//                     function(response){
-//                         console.error(response.data);
-//                     });
-//             }
-    
-
-    

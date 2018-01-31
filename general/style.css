@@ -1,7 +1,8 @@
 body {
-    background-image: url("background-wood.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url("background-wood.jpeg");
+    background-size: 100% auto;
+    background-repeat: repeat-y;
+    background-attachment: fixed;
     font-family: 'Open Sans Condensed', sans-serif;
     text-align: center;
 }

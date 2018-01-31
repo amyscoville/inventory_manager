@@ -3,7 +3,7 @@
     .module('InventoryManager')
     .controller('shoppingCartController', shoppingCartCtrl);
 
-    function shoppingCartCtrl(Cart, Transactions, SweetAlert, $localStorage) {
+    function shoppingCartCtrl(Cart, Transactions, SweetAlert, $localStorage, Auth) {
         //local variable
         var vm = this;
 
@@ -42,8 +42,11 @@
         }
 
         function placeOrder(){
-            Cart.placeOrder();
-            //if I set items and totalQuantity to zero, then the "Thank You for your order" part of the Cart.placeOrder function doesn't run. 
+            if (Auth.user) {
+                Cart.placeOrder();
+            } else {
+                SweetAlert.swal('You must be logged in to place an order.');
+            } 
         }
     }
 })();
