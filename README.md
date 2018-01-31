@@ -9,13 +9,16 @@ In order to focus fully on my new coursework at V School, I set this project asi
 Build a front-end CRUD inventory manager application with AngularJS. Include user authentication (sign-up/login), permissions (admin/registered user/unregistered user), a fully functional shopping cart, order placement and history, and the ability to add, remove, and update inventory.
 
 ### Login
-<img alt="login" src="./readme-images/login.png" width="400" height="auto">
+
+![login page](./readme-images/login.png)
 
 ### Products
-<img alt="login" src="./readme-images/products.png" width="400" height="auto">
+
+![products page](./readme-images/products.png)
 
 ### Cart
-<img alt="login" src="./readme-images/cart.png" width="400" height="auto">
+
+![cart page](./readme-images/cart.png)
 
 ## Technologies Used
 
